@@ -18,11 +18,11 @@ npm run dev
 1. composer install (cria a /vendor)
 2. npm install (cria a /node_modules)
 
-Model - App/Models
-Controller - App/Http/Controllers
-View - resources/views
-Migrations - database/migrations
-Rotas/Endpoints - routes/web.php
+Model - App/Models\
+Controller - App/Http/Controllers\
+View - resources/views\
+Migrations - database/migrations\
+Rotas/Endpoints - routes/web.php\
 
 Task (Tarefas - titulo / feita?)
 
