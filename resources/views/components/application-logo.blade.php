@@ -1,0 +1,1 @@
+<img src="https://i.postimg.cc/FY7Nbd5F/myspot-black.png" alt="MySpot Logo" class="h-10" />
