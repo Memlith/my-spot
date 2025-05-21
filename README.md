@@ -27,12 +27,12 @@ Rotas/Endpoints - routes/web.php\
 Task (Tarefas - titulo / feita?)
 
 1. ...php artisan make:model -m Task
-(Model e a migration de Task)
+   (Model e a migration de Task)
 2. Editar o migration
 3. ...php artisan migrate
 4. Editar o Model ($fillable)
 5. ...php artisan make:controller -r TaskController
-(Controller com as func index, create, store, edit, update, delete)
+   (Controller com as func index, create, store, edit, update, delete)
 6. Ajustar a func() create (view = task.create)
 7. resources/views - Criar a pasta task > create.blade.php
 8. Ajusta o form no create.blade.php
@@ -70,20 +70,18 @@ Task (Tarefas - titulo / feita?)
 
 14/05
 
-- Ajustar a migration create_task_table para adicionar o user_id (foreignIdFor)
-- Executar o php artisan migrate:fresh para recriar o BD
-- Alterar o model Task para ter a func() user
-- Alterar o model User para ter a func() tasks
-- Ajustar o Controller Task index() - devolver só as tasks do user logado
-- Corrigir no Model Task o fillable para adicionar o user_id
-- Ajustar o Controller Task store() - adicionar o user_id
-- Corrigir no Controller Task edit, update, destroy - garantir que o user_id está correto
+-   Ajustar a migration create_task_table para adicionar o user_id (foreignIdFor)
+-   Executar o php artisan migrate:fresh para recriar o BD
+-   Alterar o model Task para ter a func() user
+-   Alterar o model User para ter a func() tasks
+-   Ajustar o Controller Task index() - devolver só as tasks do user logado
+-   Corrigir no Model Task o fillable para adicionar o user_id
+-   Ajustar o Controller Task store() - adicionar o user_id
+-   Corrigir no Controller Task edit, update, destroy - garantir que o user_id está correto
 
 ---
 
 28/05
-
-
 
 ## License
 

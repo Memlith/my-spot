@@ -17,7 +17,7 @@
                     {{-- bloco mapa menu grid --}}
                     <a href="{{ 'dashboard' }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path
