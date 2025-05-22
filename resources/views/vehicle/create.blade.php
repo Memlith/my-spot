@@ -24,8 +24,19 @@
                             </div>
 
                             <div>
-                                <x-input-label for="color" :value="__('Cor *')" />
-                                <x-text-input class="block mt-2 max-w-[300px]" type="text" name="color" required />
+                                <label for="color" class="font-medium text-sm text-gray-700 dark:text-gray-300'">Cor
+                                    *</label>
+                                <select
+                                    class="block mt-2 w-full 'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-myspot-blue dark:focus:border-indigo-600 focus:ring-myspot-blue dark:focus:ring-indigo-600 rounded-md shadow-sm'">
+                                    <option>Preto</option>
+                                    <option>Branco</option>
+                                    <option>Prata</option>
+                                    <option>Cinza</option>
+                                    <option>Vermelho</option>
+                                    <option>Azul</option>
+                                    <option>Marrom</option>
+                                    <option>Bege</option>
+                                    <option>Amarelo</option>
                             </div>
 
                             <div class="mt-4">

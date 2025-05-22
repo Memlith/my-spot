@@ -34,7 +34,7 @@ class VehicleController extends Controller
         $user = Auth::user();
         $data['user_id'] = $user->id;
         Vehicle::create($data);
-        return redirect()->route('vehicle.index')->with('success', 'Vehicle registred successfully.');
+        return redirect()->route('vehicle.index');
     }
 
     public function validaAcesso(Vehicle $vehicle)
@@ -60,7 +60,7 @@ class VehicleController extends Controller
     public function edit(Vehicle $vehicle)
     {
         if(!$this->validaAcesso($vehicle)) {
-            return redirect()->route('vehicle.index')->with('error', 'You do not have permission to edit this vehicle.');
+            return redirect()->route('vehicle.index');
         }
         return view('vehicle.edit', compact('vehicle'));
     }
@@ -71,11 +71,11 @@ class VehicleController extends Controller
     public function update(Request $request, Vehicle $vehicle)
     {
         if(!$this->validaAcesso($vehicle)) {
-            return redirect()->route('vehicle.index')->with('error', 'You do not have permission to edit this vehicle.');
+            return redirect()->route('vehicle.index');
         }
         $data = $request->all();
         $vehicle->update($data);
-        return redirect()->route('vehicle.index')->with('success', 'Vehicle updated successfully.');
+        return redirect()->route('vehicle.index');
     }
     /**
      * Remove the specified resource from storage.
@@ -83,7 +83,7 @@ class VehicleController extends Controller
     public function destroy(Vehicle $vehicle)
     {
         if(!$this->validaAcesso($vehicle)) {
-            return redirect()->route('vehicle.index')->with('error', 'You do not have permission to edit this vehicle.');
+            return redirect()->route('vehicle.index')->with('error', 'You do not have permission to delete this vehicle.');
         }
         $vehicle->delete();
         return redirect()->route('vehicle.index')->with('success', 'Vehicle deleted successfully.');
