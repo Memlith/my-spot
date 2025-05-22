@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>MySpot</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -1218,29 +1218,28 @@
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <x-big-application-logo>
-                    </x-big-application-logo>
-                    @if (Route::has('login'))
-                        <nav class="-mx-3 flex flex-1 justify-end">
-                            @auth
-                                <a href="{{ url('/dashboard') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    Home
-                                </a>
-                            @else
-                                <a href="{{ route('login') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                    Log in
-                                </a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"
+                        @if (Route::has('login'))
+                            <nav class="-mx-3 flex flex-1 justify-end">
+                                @auth
+                                    <a href="{{ route('index') }}"
                                         class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Register
+                                        Home
                                     </a>
-                                @endif
-                            @endauth
-                        </nav>
-                    @endif
+                                @else
+                                    <a href="{{ route('login') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                        Log in
+                                    </a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"
+                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                            Register
+                                        </a>
+                                    @endif
+                                @endauth
+                            </nav>
+                        @endif
                 </header>
 
                 <main class="mt-6">
@@ -1284,7 +1283,7 @@
                         <a
                             class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-myspot-blue lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-myspot-blue">
                             <div
-                                class="flex size-12 shrink-0 items-center justify-center rounded-[10px] bg-myspot-blue/10 sm:size-16">
+                                class="flex items-center justify-center size-12 shrink-0  rounded-[10px] bg-myspot-blue/10 sm:size-16">
                                 <svg class="shrink-0 size-8 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                     <path

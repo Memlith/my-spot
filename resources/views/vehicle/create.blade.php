@@ -11,23 +11,23 @@
                     {{ __('Preencha os campos abaixo com os dados do veiculo.') }}
                     <div class="mt-4">
 
-                        <form action="{{ route('vehicle.store') }}" method="POST">
+                        <form class="grid grid-cols-2 gap-4" action="{{ route('vehicle.store') }}" method="POST">
                             @csrf
-                            <div>
-                                <x-input-label for="model" :value="__('Modelo *')" />
-                                <x-text-input class="block mt-2 max-w-[300px]" type="text" name="model" required />
-                            </div>
 
                             <div>
-                                <x-input-label for="brand" :value="__('Marca *')" />
-                                <x-text-input class="block mt-2 max-w-[300px]" type="text" name="brand" required />
+                                <x-input-label class="mt-3" for="brand" :value="__('Marca')" />
+                                <x-text-input class="block mt-2 w-full" type="text" name="brand" required />
                             </div>
 
+
+
                             <div>
-                                <label for="color" class="font-medium text-sm text-gray-700 dark:text-gray-300'">Cor
-                                    *</label>
-                                <select
-                                    class="block mt-2 w-full 'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-myspot-blue dark:focus:border-indigo-600 focus:ring-myspot-blue dark:focus:ring-indigo-600 rounded-md shadow-sm'">
+                                <x-input-label class="mt-3" for="color">Cor
+                                </x-input-label>
+                                <select name="color" placeholder="Cor"
+                                    class="block mt-2 max-w-[200px]'border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-myspot-blue dark:focus:border-indigo-600 focus:ring-myspot-blue dark:focus:ring-indigo-600 rounded-md shadow-sm'">
+                                    <option selected disabled>Selecione
+                                        uma cor</option>
                                     <option>Preto</option>
                                     <option>Branco</option>
                                     <option>Prata</option>
@@ -37,20 +37,28 @@
                                     <option>Marrom</option>
                                     <option>Bege</option>
                                     <option>Amarelo</option>
-                            </div>
-
-                            <div class="mt-4">
-                                <x-input-label for="license_plate" :value="__('Placa *')" />
-                                <x-text-input class="block mt-2 max-w-[300px]" type="text" name="license_plate"
-                                    required />
+                                </select>
                             </div>
 
                             <div>
-                                <x-input-label for="year" :value="__('Ano *')" />
-                                <x-text-input class="block mt-2 max-w-[300px]" type="text" name="year" required />
+                                <x-input-label class="mt-3" for="model" :value="__('Modelo')" />
+                                <x-text-input class="block mt-2 w-full" type="text" name="model" required />
                             </div>
 
-                            <x-primary-button class="mt-3" type="submit">
+
+                            <div>
+                                <x-input-label class="mt-3" for="year" :value="__('Ano')" />
+                                <x-text-input class="block mt-2 max-w-[100px]" placeholder="2025" type="text"
+                                    name="year" required />
+                            </div>
+
+                            <div>
+                                <x-input-label class="mt-3" for="license_plate" :value="__('Placa')" />
+                                <x-text-input class="block mt-2 max-w-[150px]" placeholder="XXX0X000" type="text"
+                                    name="license_plate" required />
+                            </div>
+
+                            <x-primary-button class="" type="submit">
                                 {{ __('Cadastrar') }}
                             </x-primary-button>
 

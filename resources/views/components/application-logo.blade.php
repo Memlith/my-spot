@@ -1,4 +1,4 @@
-<a href="{{ url('/dashboard') }}" class="flex flex-start items-center justify-center">
+<div class="flex flex-start items-center justify-center">
     <svg class="size-10 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
         <path d="M256 0C114.6 0 0 114.6 0 256L0 448c0 35.3 28.7 64 64 64l42.8 0c-6.6-5.9-10.8-14.4-10.8-24l0-112c0-20.8
@@ -9,4 +9,4 @@
             0 1 0 0 48zm200-24a24 24 0 1 0 -48 0 24 24 0 1 0 48 0z" />
     </svg>
     <p class="pl-2">MySpot</p>
-</a>
+</div>
