@@ -8,16 +8,17 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="p-6 text-lg  text-center text-gray-900 dark:text-gray-100">
                     {{ __('Bem-Vindo ao MySpot!') }}
 
                 </div>
                 {{-- grid dos menus --}}
-                <div class="grid grid-cols-2 place-items-center gap-4 text-gray-900 p-6 dark:text-gray-100">
+                <div class="grid grid-cols-4 justify-center mx-auto w-fit gap-4 text-gray-900 p-12 dark:text-gray-100">
                     {{-- bloco mapa menu grid --}}
-                    <a href="{{ 'dashboard' }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ 'index' }}" class="w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path
@@ -29,7 +30,8 @@
                     {{-- bloco empresas menu grid --}}
                     <a href="{{ route('company') }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path
@@ -39,9 +41,10 @@
                         </div>
                     </a>
                     {{-- bloco pagamento menu grid --}}
-                    <a href="{{ 'dashboard' }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ 'index' }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path
@@ -53,7 +56,8 @@
                     {{-- bloco de assinaturas menu grid --}}
                     <a href="{{ route('membership') }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 aspect-square w-full max-w-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                                 <path d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8.9-17.1 17.3L154.7
