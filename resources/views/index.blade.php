@@ -17,7 +17,7 @@
                     {{-- bloco mapa menu grid --}}
                     <a href="{{ 'index' }}" class="w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -30,7 +30,7 @@
                     {{-- bloco empresas menu grid --}}
                     <a href="{{ route('company') }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -43,7 +43,7 @@
                     {{-- bloco pagamento menu grid --}}
                     <a href="{{ 'index' }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -56,7 +56,7 @@
                     {{-- bloco de assinaturas menu grid --}}
                     <a href="{{ route('membership') }}" class="max-w-[150px] rounded-[16px]">
                         <div
-                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center hover:bg-gray-300 transition">
+                            class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
                             <svg class="shrink-0 size-12 fill-myspot-blue" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->

@@ -9,33 +9,37 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900  dark:text-gray-100">
                     {{ __('Empresas cadastradas.') }}
-                    <div class="grid grid-cols-3 gap-6 mt-4">
-                        <div class="flex items-start border-2 border-gray-100 rounded-[10px] p-4 bg-gray-200 w-96">
+                    <div class="grid grid-cols-3 mt-2">
+                        <div
+                            class="flex items-start my-2 border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
                             <div>
-                                <h2 class="font-bold">Empresa XYZ</h2>
-                                <p>Rua Avenida | telefone</p>
-                                <p>08:00 - 18:00</p>
+                                <h2 class="text-lg font-bold">Empresa XYZ</h2>
+                                <p class="text-sm text-gray-600">Rua Avenida | telefone</p>
+                                <p class="text-sm text-gray-600">08:00 - 18:00</p>
                             </div>
                         </div>
-                        <div class="flex items-start border-2 border-gray-100 rounded-[10px] p-4 bg-gray-200 w-96">
+                        <div
+                            class="flex items-start my-2 border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
                             <div>
-                                <h2 class="font-bold">Empresa XYZ</h2>
-                                <p>Rua Avenida | telefone</p>
-                                <p>08:00 - 18:00</p>
+                                <h2 class="text-lg font-bold">Empresa XYZ</h2>
+                                <p class="text-sm text-gray-600">Rua Avenida | telefone</p>
+                                <p class="text-sm text-gray-600">08:00 - 18:00</p>
                             </div>
                         </div>
-                        <div class="flex items-start border-2 border-gray-100 rounded-[10px] p-4 bg-gray-200 w-96">
+                        <div
+                            class="flex items-start my-2 border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
                             <div>
-                                <h2 class="font-bold">Empresa XYZ</h2>
-                                <p>Rua Avenida | telefone</p>
-                                <p>08:00 - 18:00</p>
+                                <h2 class="text-lg font-bold">Empresa XYZ</h2>
+                                <p class="text-sm text-gray-600">Rua Avenida | telefone</p>
+                                <p class="text-sm text-gray-600">08:00 - 18:00</p>
                             </div>
                         </div>
-                        <div class="flex items-start border-2 border-gray-100 rounded-[10px] p-4 bg-gray-200 w-96">
+                        <div
+                            class="flex items-start my-2 border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96 hover:bg-gray-300 transition">
                             <div>
-                                <h2 class="font-bold">Empresa XYZ</h2>
-                                <p>Rua Avenida | telefone</p>
-                                <p>08:00 - 18:00</p>
+                                <h2 class="text-lg font-bold">Empresa XYZ</h2>
+                                <p class="text-sm text-gray-600">Rua Avenida | telefone</p>
+                                <p class="text-sm text-gray-600">08:00 - 18:00</p>
                             </div>
                         </div>
                     </div>

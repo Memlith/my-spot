@@ -16,10 +16,10 @@
                                 {{ __('Cadastrar Veiculo') }}
                             </x-primary-button>
                         </a>
-                        <div class="grid grid-cols-3 gap-6 mt-4">
-                            <div
-                                class="flex items-start border-2 border-gray-100 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
-                                @foreach ($vehicles as $vehicle)
+                        <div class="grid grid-cols-3 mt-4">
+                            @foreach ($vehicles as $vehicle)
+                                <div
+                                    class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
                                     <div class="flex justify-between items-center w-full">
                                         <div>
                                             <h2 class="font-bold text-lg">{{ $vehicle->brand }} {{ $vehicle->model }}
@@ -60,14 +60,14 @@
                                                 </button>
                                             </form>
                                         </div>
-                                @endforeach
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </x-app-layout>

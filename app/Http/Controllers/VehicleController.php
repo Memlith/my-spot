@@ -83,9 +83,9 @@ class VehicleController extends Controller
     public function destroy(Vehicle $vehicle)
     {
         if(!$this->validaAcesso($vehicle)) {
-            return redirect()->route('vehicle.index')->with('error', 'You do not have permission to delete this vehicle.');
+            return redirect()->route('vehicle.index');
         }
         $vehicle->delete();
-        return redirect()->route('vehicle.index')->with('success', 'Vehicle deleted successfully.');
+        return redirect()->route('vehicle.index');
     }
 }
