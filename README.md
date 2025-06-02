@@ -13,6 +13,8 @@ php artisan serve
 
 npm run dev
 
+(caso não de certo ou de erro consultar Anotações Felipe
+
 ## Anotações Felipe
 
 1. composer install (cria a /vendor)
@@ -80,8 +82,6 @@ Task (Tarefas - titulo / feita?)
 -   Corrigir no Controller Task edit, update, destroy - garantir que o user_id está correto
 
 ---
-
-28/05
 
 ## License
 
