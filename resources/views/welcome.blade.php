@@ -1218,28 +1218,29 @@
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <x-big-application-logo>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a href="{{ route('index') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Home
-                                    </a>
-                                @else
-                                    <a href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Log in
-                                    </a>
+                    </x-big-application-logo>
+                    @if (Route::has('login'))
+                        <nav class="-mx-3 flex flex-1 justify-end">
+                            @auth
+                                <a href="{{ route('index') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    Dashboard
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    Log in
+                                </a>
 
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                        Register
+                                    </a>
+                                @endif
+                            @endauth
+                        </nav>
+                    @endif
                 </header>
 
                 <main class="mt-6">
@@ -1292,7 +1293,7 @@
                             </div>
 
                             <div class="pt-3 sm:pt-5">
-                                <h2 class="text-xl font-semibold text-black dark:text-white">Empresas</h2>
+                                <h2 class="text-xl font-semibold text-black dark:text-white">Estabelecimentos</h2>
 
                                 <p class="mt-4 text-sm/relaxed">
                                     Com MySpot, as empresas podem gerenciar suas vagas de estacionamento de forma

@@ -24,14 +24,20 @@ Route::middleware('auth')->group(function () {
     Route::patch('/vehicle/{vehicle}', [VehicleController::class, 'update'])->name('vehicle.update');
     Route::delete('/vehicle/{vehicle}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
 
-Route::get('/company', function () {
-    return view('/company/index');
-})->middleware(['auth', 'verified'])->name('company');
+
+    Route::get('/establishment', function () {
+        return view('/establishment/index');
+    })->middleware(['auth', 'verified'])->name('establishment');
 });
 Route::get('/membership', function () {
     return view('/membership/index');
 })->middleware(['auth', 'verified'])->name('membership');
 
+Route::get('/dashboard', function () {
+    if (auth()->user()->tipo === 'business') {
+        return view('/business/dashboard');
+    }
+    return view('/client/dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

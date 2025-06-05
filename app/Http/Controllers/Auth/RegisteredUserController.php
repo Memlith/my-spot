@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use \App\Rules\ValidaCpfCnpj;
 
 class RegisteredUserController extends Controller
 {
@@ -31,13 +32,20 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+            'cpf_cnpj' => ['required', 'string', 'max:20', 'unique:' . User::class, new ValidaCpfCnpj],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        $cpf_cnpj = preg_replace('/\D/', '', $request->cpf_cnpj);
+        $tipo = strlen($cpf_cnpj) === 14 ? 'empresa' : 'cliente';
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'cpf_cnpj' => $request->cpf_cnpj,
+            'tipo' => $tipo,
             'password' => Hash::make($request->password),
         ]);
 

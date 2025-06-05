@@ -12,10 +12,13 @@
                     {{ __('Bem-Vindo ao MySpot!') }}
 
                 </div>
+                <div class="flex justify-center mx-auto w-fit gap-4 text-gray-900 p-12 dark:text-gray-100">
+
+                </div>
                 {{-- grid dos menus --}}
                 <div class="grid grid-cols-4 justify-center mx-auto w-fit gap-4 text-gray-900 p-12 dark:text-gray-100">
                     {{-- bloco mapa menu grid --}}
-                    <a href="{{ 'index' }}" class="w-[150px] rounded-[16px]">
+                    <a href="{{ 'dashboard' }}" class="w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -41,7 +44,7 @@
                         </div>
                     </a>
                     {{-- bloco pagamento menu grid --}}
-                    <a href="{{ 'index' }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ 'dashboard' }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
