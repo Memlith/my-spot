@@ -1222,7 +1222,7 @@
                     @if (Route::has('login'))
                         <nav class="-mx-3 flex flex-1 justify-end">
                             @auth
-                                <a href="{{ route('index') }}"
+                                <a href="{{ route('dashboard') }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                     Dashboard
                                 </a>
@@ -1296,18 +1296,12 @@
                                 <h2 class="text-xl font-semibold text-black dark:text-white">Estabelecimentos</h2>
 
                                 <p class="mt-4 text-sm/relaxed">
-                                    Com MySpot, as empresas podem gerenciar suas vagas de estacionamento de forma
+                                    Com MySpot, estabelecimentos parceiros podem gerenciar suas vagas de estacionamento
+                                    de forma
                                     eficiente e prática, além de permitir o controle do uso das vagas pelos
                                     funcionários.
                                 </p>
                             </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-myspot-blue"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
                         </a>
 
                         <a
@@ -1331,13 +1325,6 @@
                                     movimentados ou em horários de pico.
                                 </p>
                             </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-myspot-blue"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
                         </a>
 
                         <div
@@ -1356,7 +1343,7 @@
                                 </h2>
 
                                 <p class="mt-4 text-sm/relaxed">
-                                    O MySpot é uma plataforma que visa reduzir o impacto ambiental causado pelo tráfego
+                                    Nós somos uma plataforma que visa reduzir o impacto ambiental causado pelo tráfego
                                     de veículos, promovendo a utilização consciente dos espaços de estacionamento.
                                     Ao facilitar o compartilhamento de vagas, contribuímos para a diminuição da emissão
                                     de poluentes e do consumo de recursos naturais.

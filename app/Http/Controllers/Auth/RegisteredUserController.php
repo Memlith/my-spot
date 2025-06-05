@@ -37,6 +37,10 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $request->merge([
+            'name' => ucfirst(strtolower($request->name)),
+        ]);
+
         $cpf_cnpj = preg_replace('/\D/', '', $request->cpf_cnpj);
         $tipo = strlen($cpf_cnpj) === 14 ? 'empresa' : 'cliente';
 

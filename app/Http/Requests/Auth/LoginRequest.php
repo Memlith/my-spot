@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Rules\ValidaCpfCnpj;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'cpf_cnpj' => ['required', 'string', 'cpf_cnpj'],
+            'cpf_cnpj' => ['required', 'string', new ValidaCpfCnpj],
             'password' => ['required', 'string'],
         ];
     }

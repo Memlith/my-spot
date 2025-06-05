@@ -8,14 +8,14 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-lg  text-center text-gray-900 dark:text-gray-100">
-                    {{ __('Bem-Vindo ao MySpot!') }}
+                <div class="text-lg mt-6 text-center text-gray-900 dark:text-gray-100">
+                    {{ 'Bem-Vindo ao MySpot, ' . ucfirst(strtolower(Auth::user()->name)) }}
 
                 </div>
                 {{-- grid dos menus --}}
                 <div class="grid grid-cols-4 justify-center mx-auto w-fit gap-4 text-gray-900 p-12 dark:text-gray-100">
                     {{-- bloco mapa menu grid --}}
-                    <a href="{{ 'index' }}" class="w-[150px] rounded-[16px]">
+                    <a href="{{ 'map' }}" class="w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -41,7 +41,7 @@
                         </div>
                     </a>
                     {{-- bloco pagamento menu grid --}}
-                    <a href="{{ 'index' }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ 'payment' }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 

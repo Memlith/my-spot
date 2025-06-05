@@ -3,14 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('index');
-})->middleware(['auth', 'verified'])->name('index');
+// Route::get('/index', function () {
+//     return view('index');
+// })->middleware(['auth', 'verified'])->name('index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -24,20 +25,31 @@ Route::middleware('auth')->group(function () {
     Route::patch('/vehicle/{vehicle}', [VehicleController::class, 'update'])->name('vehicle.update');
     Route::delete('/vehicle/{vehicle}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
 
-
     Route::get('/establishment', function () {
-        return view('/establishment/index');
-    })->middleware(['auth', 'verified'])->name('establishment');
-});
-Route::get('/membership', function () {
-    return view('/membership/index');
-})->middleware(['auth', 'verified'])->name('membership');
+        return view('establishment/index');
+    })->name('establishment');
+    Route::get('/establishment/map', function () {
+        return view('establishment/map');
+    })->name('establishment.map');
+    Route::get('/membership', function () {
+        return view('membership/index');
+    })->name('membership');
+    Route::get('/payment', function () {
+        return view('payment/index');
+    })->name('payment');
+    Route::get('/map', function () {
+        return view('map/index');
+    })->name('map');
+    Route::get('/support', function () {
+        return view('support/index');
+    })->name('support');
 
-Route::get('/dashboard', function () {
-    if (auth()->user()->tipo === 'business') {
-        return view('/business/dashboard');
-    }
-    return view('/client/dashboard');
-})->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        if (Auth::user()->tipo === 'empresa') {
+            return view('business/dashboard');
+        }
+        return view('client/dashboard');
+    })->name('dashboard');
+});
 
 require __DIR__ . '/auth.php';

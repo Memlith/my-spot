@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class VehicleController extends Controller
 {
@@ -40,6 +41,11 @@ class VehicleController extends Controller
                 'required',
                 'regex:/^[A-Za-z]{3}[0-9][A-Za-z][0-9]{2}$/'
             ],
+        ]);
+        $request->merge([
+            'license_plate' => strtoupper($request->license_plate),
+            'brand' => ucfirst(strtolower($request->brand)),
+            'model' => ucfirst(strtolower($request->model)),
         ]);
         $data = $request->all();
         $user = Auth::user();
@@ -81,6 +87,10 @@ class VehicleController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle)
     {
+        $request->merge([
+            'license_plate' => strtoupper($request->license_plate),
+        ]);
+
         if (!$this->validaAcesso($vehicle)) {
             return redirect()->route('vehicle.index');
         }

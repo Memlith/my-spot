@@ -7,26 +7,28 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+                <div class="text-lg mt-6 text-center text-gray-900 dark:text-gray-100">
                     {{ __('Preencha os campos abaixo com os dados do veiculo.') }}
+                </div>
+                <div class="p-6 pt-3 text-gray-900 dark:text-gray-100">
                     <div class="mt-4">
-
                         <form class="grid grid-cols-2 gap-4" action="{{ route('vehicle.update', $vehicle) }}"
                             method="POST">
                             @csrf
                             @method('PATCH')
+                            {{-- input marca --}}
                             <div>
                                 <x-input-label class="mt-3" for="brand" :value="__('Marca')" />
                                 <x-text-input class="block mt-2 w-full" type="text" name="brand" :value="old('brand', $vehicle->brand)"
                                     required />
                             </div>
-
+                            {{-- input modelo --}}
                             <div>
                                 <x-input-label class="mt-3" for="model" :value="__('Modelo')" />
                                 <x-text-input class="block mt-2 w-full" type="text" name="model" :value="old('model', $vehicle->model)"
                                     required />
                             </div>
-
+                            {{-- input cor --}}
                             <div>
                                 <x-input-label class="mt-3" for="color">Cor
                                 </x-input-label>
@@ -44,17 +46,17 @@
                                     <option value="Amarelo" @selected($vehicle->color == 'Amarelo')>Amarelo</option>
                                 </select>
                             </div>
-
+                            {{-- input ano --}}
                             <div>
                                 <x-input-label class="mt-3" for="year" :value="__('Ano')" />
                                 <x-text-input class="block mt-2 max-w-[100px]" type="text" name="year"
                                     :value="old('year', $vehicle->year)" required />
                             </div>
-
+                            {{-- input placa --}}
                             <div>
                                 <x-input-label class="mt-3" for="license_plate" :value="__('Placa')" />
-                                <x-text-input class="block mt-2 max-w-[150px]" type="text" name="license_plate"
-                                    :value="old('license_plate', $vehicle->license_plate)" required />
+                                <x-text-input class="uppercas block mt-2 max-w-[150px]" type="text"
+                                    name="license_plate" :value="old('license_plate', $vehicle->license_plate)" required />
                             </div>
 
                             <x-primary-button class="" type="submit">
