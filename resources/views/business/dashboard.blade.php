@@ -1,21 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Home') }}
+            {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-lg  text-center text-gray-900 dark:text-gray-100">
-                    {{ __('Bem-Vindo ao MySpot!') }}
+                <div class="text-lg mt-6 text-center text-gray-900 dark:text-gray-100">
+                    {{ 'Bem-Vindo ao MySpot, ' . ucfirst(strtolower(Auth::user()->name)) }}
 
                 </div>
                 {{-- grid dos menus --}}
                 <div class="grid grid-cols-4 justify-center mx-auto w-fit gap-4 text-gray-900 p-12 dark:text-gray-100">
                     {{-- bloco mapa menu grid --}}
-                    <a href="{{ 'index' }}" class="w-[150px] rounded-[16px]">
+                    <a href="{{ 'map' }}" class="w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -28,7 +28,7 @@
                         </div>
                     </a>
                     {{-- bloco empresas menu grid --}}
-                    <a href="{{ route('company') }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ route('establishment') }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -37,11 +37,11 @@
                                 <path
                                     d="M64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l80 0 0-64c0-26.5 21.5-48 48-48s48 21.5 48 48l0 64 80 0c8.8 0 16-7.2 16-16l0-384c0-8.8-7.2-16-16-16L64 48zM0 64C0 28.7 28.7 0 64 0L320 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm88 40c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48zM232 88l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48c0-8.8 7.2-16 16-16zM88 232c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48zm144-16l48 0c8.8 0 16 7.2 16 16l0 48c0 8.8-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-48c0-8.8 7.2-16 16-16z" />
                             </svg>
-                            <p class="mt-2 text-base text-center">Empresas</p>
+                            <p class="mt-2 text-base text-center">Estabelecimentos</p>
                         </div>
                     </a>
                     {{-- bloco pagamento menu grid --}}
-                    <a href="{{ 'index' }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ 'payment' }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 

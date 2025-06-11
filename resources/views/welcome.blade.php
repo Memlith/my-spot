@@ -1218,28 +1218,29 @@
             <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <x-big-application-logo>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a href="{{ route('index') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Home
-                                    </a>
-                                @else
-                                    <a href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                        Log in
-                                    </a>
+                    </x-big-application-logo>
+                    @if (Route::has('login'))
+                        <nav class="-mx-3 flex flex-1 justify-end">
+                            @auth
+                                <a href="{{ route('dashboard') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    Dashboard
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                    Log in
+                                </a>
 
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-myspot-blue dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                        Register
+                                    </a>
+                                @endif
+                            @endauth
+                        </nav>
+                    @endif
                 </header>
 
                 <main class="mt-6">
@@ -1292,21 +1293,15 @@
                             </div>
 
                             <div class="pt-3 sm:pt-5">
-                                <h2 class="text-xl font-semibold text-black dark:text-white">Empresas</h2>
+                                <h2 class="text-xl font-semibold text-black dark:text-white">Estabelecimentos</h2>
 
                                 <p class="mt-4 text-sm/relaxed">
-                                    Com MySpot, as empresas podem gerenciar suas vagas de estacionamento de forma
+                                    Com MySpot, estabelecimentos parceiros podem gerenciar suas vagas de estacionamento
+                                    de forma
                                     eficiente e prática, além de permitir o controle do uso das vagas pelos
                                     funcionários.
                                 </p>
                             </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-myspot-blue"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
                         </a>
 
                         <a
@@ -1330,13 +1325,6 @@
                                     movimentados ou em horários de pico.
                                 </p>
                             </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-myspot-blue"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
                         </a>
 
                         <div
@@ -1355,7 +1343,7 @@
                                 </h2>
 
                                 <p class="mt-4 text-sm/relaxed">
-                                    O MySpot é uma plataforma que visa reduzir o impacto ambiental causado pelo tráfego
+                                    Nós somos uma plataforma que visa reduzir o impacto ambiental causado pelo tráfego
                                     de veículos, promovendo a utilização consciente dos espaços de estacionamento.
                                     Ao facilitar o compartilhamento de vagas, contribuímos para a diminuição da emissão
                                     de poluentes e do consumo de recursos naturais.
@@ -1366,7 +1354,7 @@
                 </main>
 
                 <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    &copy; MySpot 2025. Todos os direitos reservados
                 </footer>
             </div>
         </div>
