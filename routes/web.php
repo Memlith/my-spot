@@ -25,9 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/vehicle/{vehicle}', [VehicleController::class, 'update'])->name('vehicle.update');
     Route::delete('/vehicle/{vehicle}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
 
-    Route::get('/establishment', function () {
-        return view('establishment/index');
-    })->name('establishment');
+    Route::get('/establishment', [ProfileController::class, 'index'])->name('establishment.index');
     Route::get('/establishment/map', function () {
         return view('establishment/map');
     })->name('establishment.map');
