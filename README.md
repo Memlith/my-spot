@@ -1,12 +1,32 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+## Preparando para conseguir rodar o projeto
+
+npm install
+
+npm audit fix
+
+composer install
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan migrate
+
+## Antes de começar a codar
+
+git fetch (synca o repo local com remoto sem puxar arquivos)
+
+git pull (synca o repo local com remoto e puxa arquivos)
+
+git checkout -b nome_branch (cria e entre em uma nova branch para trabalhar separadamente da main)
+
 ## Hosteando o web server localmente
 
 php artisan serve
 
 npm run dev
-
-(caso não de certo ou de erro consultar Anotações Felipe
 
 ## Anotações Felipe
 
