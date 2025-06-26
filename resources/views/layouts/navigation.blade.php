@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('establishment.index')" :active="request()->routeIs('establishment.index')">
                         {{ __('Estabelecimentos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('membership')" :active="request()->routeIs('membership')">
+                    <x-nav-link :href="route('assinaturas.index')" :active="request()->routeIs('assinaturas.index')">
                         {{ __('Assinaturas') }}
                     </x-nav-link>
                     <x-nav-link :href="route('support')" :active="request()->routeIs('support')">
@@ -28,6 +28,7 @@
             </div>
 
             <!-- Settings Dropdown -->
+            @auth
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -67,6 +68,16 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @else
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <a href="{{ route('login') }}" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                    Login
+                </a>
+                <a href="{{ route('register') }}" class="ml-4 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium">
+                    Registrar
+                </a>
+            </div>
+            @endauth
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -93,6 +104,7 @@
         </div>
 
         <!-- Responsive Settings Options -->
+        @auth
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800 dark:text-gray-200">
@@ -120,5 +132,6 @@
                 </form>
             </div>
         </div>
+        @endauth
     </div>
 </nav>
