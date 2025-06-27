@@ -23,13 +23,13 @@
                     <div
                         class="flex items-start border-2 border-gray-300 rounded-[10px] p-2 bg-gray-200 w-96  hover:bg-gray-300 transition">
                         <div>
-                            <h2 class="text-lg font-bold">Ultimo Carro usado</h2>
+                            <h2 class="text-lg font-bold">Ultimo veiculo usado</h2>
                             <p class="text-sm text-gray-600">
                                 @if (Auth::user()->vehicles && Auth::user()->vehicles->count())
                                     {{ Auth::user()->vehicles->first()->brand }}
                                     {{ Auth::user()->vehicles->first()->model }}
                                 @else
-                                    Nenhum carro cadastrado
+                                    Nenhum veiculo cadastrado.
                                 @endif
                             </p>
                             <p class="text-sm text-gray-600"></p>
@@ -78,7 +78,7 @@
                         </div>
                     </a>
                     {{-- bloco de assinaturas menu grid --}}
-                    <a href="{{ route('membership') }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ route('subscription.index') }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 

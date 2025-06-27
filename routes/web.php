@@ -22,7 +22,7 @@ Route::get("/", function () {
     return view("welcome");
 });
 
-// A rota 
+// A rota
 // Route::get("/index", function () {
 //     return view("index");
 // })->middleware(["auth", "verified"])->name("index");
@@ -30,7 +30,7 @@ Route::get("/", function () {
 // --- INÍCIO DAS ROTAS PÚBLICAS (NÃO REQUEREM AUTENTICAÇÃO) ---
 
 // Rota para exibir os planos de assinatura (página pública, acessível a todos)
-Route::get("/assinaturas", [SubscriptionController::class, "index"])->name("assinaturas.index");
+Route::get("/subscription/index", [SubscriptionController::class, "index"])->name("subscription.index");
 
 // --- FIM DAS ROTAS PÚBLICAS ---
 
@@ -56,14 +56,11 @@ Route::middleware("auth")->group(function () {
         return view("establishment/map");
     })->name("establishment.map");
 
-    // Rotas de Membrosia/Pagamento (você já tinha estas e elas devem ser autenticadas)
-    Route::get("/membership", function () {
-        return view("membership/index");
-    })->name("membership");
+    // Rotas de Pagamento (você já tinha estas e elas devem ser autenticadas)
     Route::get("/payment", function () {
         return view("payment/index");
     })->name("payment");
-    
+
     // Outras rotas gerais autenticadas
     Route::get("/map", function () {
         return view("map/index");

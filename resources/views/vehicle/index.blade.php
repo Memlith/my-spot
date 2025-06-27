@@ -25,7 +25,7 @@
                                 <div class="flex justify-between items-center w-full">
                                     <div>
                                         <h2 class="font-bold text-lg">{{ $vehicle->brand }}
-                                            {{ $vehicle->model }} - {{ $vehicle->year }} 
+                                            {{ $vehicle->model }} - {{ $vehicle->year }}
                                         </h2>
                                         <p class="text-sm text-gray-600">{{ $vehicle->tipo }} |
                                             {{ $vehicle->license_plate }} | {{ $vehicle->color }}
@@ -49,7 +49,8 @@
                                             </svg>
                                         </a>
 
-                                        <form action="{{ route('vehicle.destroy', $vehicle) }}" method="POST">
+                                        <form action="{{ route('vehicle.destroy', $vehicle) }}" method="POST"
+                                            onsubmit="return confirm('Tem certeza que deseja excluir este veículo?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit">
