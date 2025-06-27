@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('license_plate')->unique();
             $table->string('color');
             $table->string('year');
+            $table->string('tipo');
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
         });

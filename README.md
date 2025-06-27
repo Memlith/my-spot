@@ -74,11 +74,11 @@ Então abrir no browser o link que o <i><b>php artisan serve</b></i> mostrou
 1. composer install (cria a /vendor)
 2. npm install (cria a /node_modules)
 
-Model - App/Models\
-Controller - App/Http/Controllers\
-View - resources/views\
-Migrations - database/migrations\
-Rotas/Endpoints - routes/web.php\
+Model - App/Models\ -> Classes
+Controller - App/Http/Controllers\ ->
+View - resources/views\ -> Telas
+Migrations - database/migrations\ -> Banco de Dados
+Rotas/Endpoints - routes/web.php\ -> Link URL das Paginas
 
 Task (Tarefas - titulo / feita?)
 
