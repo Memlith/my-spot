@@ -16,8 +16,12 @@
                         class="flex items-start border-2 border-gray-300 rounded-[10px] p-2 bg-gray-200 w-96  hover:bg-gray-300 transition">
                         <div>
                             <h2 class="text-lg font-bold">Ultimo lugar visitado</h2>
-                            <p class="text-sm text-gray-600">Empresa XYZ</p>
-                            <p class="text-sm text-gray-600">05/06/2025 14:57</p>
+                            @if (isset($lastVisited))
+                                <p class="text-sm text-gray-600">{{ $lastVisited->name }}</p>
+                                <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
+                            @else
+                                <p class="text-sm text-gray-600">Nenhum estabelecimento visitado.</p>
+                            @endif
                         </div>
                     </div>
                     <div
@@ -27,7 +31,11 @@
                             <p class="text-sm text-gray-600">
                                 @if (Auth::user()->vehicles && Auth::user()->vehicles->count())
                                     {{ Auth::user()->vehicles->first()->brand }}
-                                    {{ Auth::user()->vehicles->first()->model }}
+                                    {{ Auth::user()->vehicles->first()->model }} -
+                                    {{ Auth::user()->vehicles->first()->year }}<br>
+                                    {{ Auth::user()->vehicles->first()->license_plate }} |
+                                    {{ Auth::user()->vehicles->first()->color }} |
+                                    {{ Auth::user()->vehicles->first()->tipo }}
                                 @else
                                     Nenhum veiculo cadastrado.
                                 @endif

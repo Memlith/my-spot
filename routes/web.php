@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\EstablishmentController;
+use App\Models\Establishment;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\MapController;
 
@@ -14,6 +16,10 @@ Route::get('/', function () {
 // Route::get('/index', function () {
 //     return view('index');
 // })->middleware(['auth', 'verified'])->name('index');
+
+Route::get("/subscription/index", [SubscriptionController::class, "index"])->name("subscription.index");
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,13 +33,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/vehicle/{vehicle}', [VehicleController::class, 'update'])->name('vehicle.update');
     Route::delete('/vehicle/{vehicle}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
 
-    Route::get('/establishment', function () {
-        return view('establishment/index');
-    })->name('establishment');
+    Route::get('/establishment', [EstablishmentController::class, 'index'])->name('establishment.index');
 
-    Route::get('/membership', function () {
-        return view('membership/index');
-    })->name('membership');
     Route::get('/payment', function () {
         return view('payment/index');
     })->name('payment');
@@ -45,7 +46,9 @@ Route::middleware('auth')->group(function () {
         if (Auth::user()->tipo === 'empresa') {
             return view('business/dashboard');
         }
-        return view('client/dashboard');
+        $lastVisited = Establishment::first();
+
+        return view('client/dashboard', ['lastVisited' => $lastVisited]);
     })->name('dashboard');
 });
 
@@ -65,5 +68,3 @@ Route::prefix('maps')->name('maps.')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-
-

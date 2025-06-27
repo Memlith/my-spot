@@ -19,8 +19,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('establishment.index', compact('users'));
+
     }
     /* Display the user's profile form.
      */
