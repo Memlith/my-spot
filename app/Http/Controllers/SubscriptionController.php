@@ -10,7 +10,7 @@ class SubscriptionController extends Controller
     public function index()
     {
         $subscriptions = Subscription::all();
-        return view("subscriptions", compact("subscriptions"));
+        return view("subscription.index", compact("subscriptions"));
     }
 }
 

@@ -22,6 +22,8 @@ cp .env.example .env # copia arquivo .env.example e cria arquivo .env
 php artisan key:generate # gera chaves de criptografia
 
 php artisan migrate # cria o banco de dados limpo
+
+php artisan db:seed # inicia os seeders, ativa as assinaturas
 ```
 
 ## Antes de começar a codar
