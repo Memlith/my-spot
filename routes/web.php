@@ -30,18 +30,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/establishment', function () {
         return view('establishment/index');
     })->name('establishment');
-    Route::get('/establishment/map', function () {
-        return view('establishment/map');
-    })->name('establishment.map');
+
     Route::get('/membership', function () {
         return view('membership/index');
     })->name('membership');
     Route::get('/payment', function () {
         return view('payment/index');
     })->name('payment');
-    Route::get('/map', function () {
-        return view('map/index');
-    })->name('map');
     Route::get('/support', function () {
         return view('support/index');
     })->name('support');

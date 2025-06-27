@@ -39,7 +39,7 @@
                 {{-- grid dos menus --}}
                 <div class="grid grid-cols-4 justify-center mx-auto w-fit gap-4 text-gray-900 p-6 dark:text-gray-100">
                     {{-- bloco mapa menu grid --}}
-                    <a href="{{ 'map' }}" class="w-[150px] rounded-[16px]">
+                    <a href="{{ route('maps.global') }}" class="w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -52,7 +52,7 @@
                         </div>
                     </a>
                     {{-- bloco empresas menu grid --}}
-                    <a href="{{ route('establishment') }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="F" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
