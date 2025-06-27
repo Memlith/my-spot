@@ -12,6 +12,7 @@ class Vehicle extends Model
         'license_plate',
         'color',
         'year',
+        'tipo',
         'user_id'
     ];
 

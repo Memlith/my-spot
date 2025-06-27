@@ -8,7 +8,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="text-lg mt-6 text-center text-gray-900 dark:text-gray-100">
-                    {{ _('Mapa do Estacionamento de ' . ucfirst(strtolower(Auth::user()->name))) }}
+                    {{ _('Mapa do Estacionamento de ' . Str::title(strtolower(Auth::user()->name))) }}
                 </div>
                 <div class="p-6 pt-3 text-gray-900  dark:text-gray-100">
                 </div>

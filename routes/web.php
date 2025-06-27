@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\MapController;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,9 +48,6 @@ Route::middleware('auth')->group(function () {
         return view('client/dashboard');
     })->name('dashboard');
 });
-    Route::get('/', function () {
-    return redirect()->route('maps.global');
-});
 
 Route::prefix('maps')->name('maps.')->group(function () {
     Route::get('/global', [MapController::class, 'globalMap'])->name('global');
@@ -68,3 +65,5 @@ Route::prefix('maps')->name('maps.')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+

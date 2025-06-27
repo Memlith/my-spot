@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="text-lg mt-6 text-center text-gray-900 dark:text-gray-100">
-                    {{ 'Bem-Vindo ao MySpot, ' . ucfirst(strtolower(Auth::user()->name)) }}
+                    {{ 'Bem-Vindo ao MySpot, ' . Str::title(strtolower(Auth::user()->name)) }}
 
                 </div>
                 {{-- grid dos menus --}}
@@ -28,7 +28,7 @@
                         </div>
                     </a>
                     {{-- bloco empresas menu grid --}}
-                    <a href="{{ route('establishment') }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ route('establishment.index') }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
@@ -54,7 +54,7 @@
                         </div>
                     </a>
                     {{-- bloco de assinaturas menu grid --}}
-                    <a href="{{ route('membership') }}" class="max-w-[150px] rounded-[16px]">
+                    <a href="{{ route('subscription.index') }}" class="max-w-[150px] rounded-[16px]">
                         <div
                             class="bg-gray-200 rounded-[16px] p-6 w-[150px] h-[150px] flex flex-col items-center justify-center border-2 border-gray-300 hover:bg-gray-300 transition">
 
