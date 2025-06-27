@@ -88,6 +88,17 @@ Route::middleware("auth")->group(function () {
         return redirect()->route("login");
     })->name("dashboard");
 
+    //rota business
+    Route::get('/dashboard', function () {
+    return view('business.dashboard');
+    })->name('dashboard');
+    
+    //rota detalhes
+    Route::get('/estacionamento/detalhes', function () {
+    return view('business.detalhes');
+    })->name('estacionamento.detalhes');
+
+
 }); // <--- ESTE É O FECHAMENTO DO BLOCO DE ROTAS QUE EXIGEM AUTENTICAÇÃO.
     // Ele precisa estar no final de TODAS as rotas que dependem de "auth".
 
