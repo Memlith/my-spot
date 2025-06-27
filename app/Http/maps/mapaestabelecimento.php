@@ -25,7 +25,7 @@
             });
 
             // Definição dos ícones personalizados para cada estado/tipo de vaga
-            const iconBase = 'http://maps.google.com/mapfiles/ms/icons/'; // Base para ícones padrão do Google Maps
+            const iconBase = 'https://maps.google.com/mapfiles/ms/icons/'; // Base para ícones padrão do Google Maps
             const icons = {
                 // Vagas Regulares
                 regular_available: {
@@ -50,7 +50,7 @@
                 }
             };
 
-            fetch('/maps/api/establishment/{{ $establishment->id }}/spots')
+            fetch('{{ route('maps.api.establishment.spots', ['id' => $establishment->id]) }}')
                 .then(response => response.json())
                 .then(spots => {
                     spots.forEach(spot => {

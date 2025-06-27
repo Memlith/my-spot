@@ -35,7 +35,7 @@
                         });
 
                         const infoWindow = new google.maps.InfoWindow({
-                            content: `<h3>${establishment.name}</h3><p>${establishment.description || ''}</p><p><a href="/maps/establishment/${establishment.id}">Ver Vagas</a></p>`
+                            content: `<h3>${establishment.name}</h3><p>${establishment.description || ''}</p><p><a href="{{ route('maps.establishment', ['id' => '']) }}${establishment.id}">Ver Vagas</a></p>`
                         });
 
                         marker.addListener("click", () => {
