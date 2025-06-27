@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $request->merge([
-            'name' => ucfirst(strtolower($request->name)),
+            'name' => Str::title(strtolower($request->name)),
         ]);
 
         $cpf_cnpj = preg_replace('/\D/', '', $request->cpf_cnpj);
