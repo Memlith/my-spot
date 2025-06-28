@@ -1,4 +1,16 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" 
+width="400" alt="Laravel Logo"></a></p>
+
+## O projeto
+
+## Integrantes do grupo
+
+-   Airton Araujo Barreto Júnior
+-   Apolo Bastos Leonardi
+-   Caio Simonassi
+-   Gustavo Bravo Welke
+-   Lucas Corrêa e Silva
+-   Pedro Vinicius Rodrigues de Souza
 
 ## Clonando o repositorio
 
@@ -21,9 +33,7 @@ cp .env.example .env # copia arquivo .env.example e cria arquivo .env
 
 php artisan key:generate # gera chaves de criptografia
 
-php artisan migrate # cria o banco de dados limpo
-
-php artisan db:seed # inicia os seeders, ativa as assinaturas
+php artisan migrate --seed # cria o banco de dados limpo e ja cria os seeders de teste
 ```
 
 ## Antes de começar a codar
@@ -68,6 +78,12 @@ Então abrir no browser o link que o <i><b>php artisan serve</b></i> mostrou
     - Ir ate a pasta raiz do php
     - Abrir o arquivo php.ini com bloco de notas
     - Alterar linha com VARIABLE_ORDER="EGPCS" para "GPCS"
+
+2. Problema de extensao do php
+
+    - Ir ate a pasta raiz do php
+    - Abrir o arquivo php.ini com bloco de notas
+    - Descomentar as extensões, pdo_sqlite, sqlite, zip, mbtype.
 
 ## Anotações Felipe
 
