@@ -12,14 +12,13 @@
                 </div>
                 <div class="p-6 pt-3 text-gray-900  dark:text-gray-100">
                     <div class="grid grid-cols-3 gap-4 mt-2">
-                        @foreach ($users->where('tipo', 'empresa') as $user)
-                            <a href="{{ route('establishment.map') }}">
+                        @foreach ($establishments as $establishment)
+                            <a href="{{ route('maps.establishment', $establishment) }}">
                                 <div
                                     class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
                                     <div>
-                                        <h2 class="text-lg font-bold">{{ $user->name }}</h2>
-                                        <p class="text-sm text-gray-600">{{ $user->adress . ' | ' . $user->contact }}
-                                        </p>
+                                        <h2 class="text-lg font-bold">{{ $establishment->name }}</h2>
+                                        <p class="text-sm text-gray-600">{{ $establishment->description }}</p>
                                         <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
                                     </div>
                                 </div>
@@ -30,4 +29,6 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </x-app-layout>

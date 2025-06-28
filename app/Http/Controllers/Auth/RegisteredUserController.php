@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use \App\Rules\ValidaCpfCnpj;
+use Str;
 
 class RegisteredUserController extends Controller
 {
@@ -38,7 +39,7 @@ class RegisteredUserController extends Controller
         ]);
 
         $request->merge([
-            'name' => Str::title(strtolower($request->name)),
+            'name' => ucwords(strtolower($request->name)),
         ]);
 
         $cpf_cnpj = preg_replace('/\D/', '', $request->cpf_cnpj);

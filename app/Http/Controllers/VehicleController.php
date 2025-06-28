@@ -94,7 +94,7 @@ class VehicleController extends Controller
      */
     public function update(Request $request, Vehicle $vehicle)
     {
-       
+    
         if (!$this->validaAcesso($vehicle)) {
             return redirect()->route('vehicle.index')->with('error', 'Você não tem permissão para atualizar este veículo.');
         }

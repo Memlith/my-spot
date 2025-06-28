@@ -4,106 +4,67 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\EstablishmentController;
+use App\Models\Establishment;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\MapController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-// Rota inicial da aplicação (página de boas-vindas)
-Route::get("/", function () {
-    return view("welcome");
+Route::get('/', function () {
+    return view('welcome');
 });
 
-// A rota 
-// Route::get("/index", function () {
-//     return view("index");
-// })->middleware(["auth", "verified"])->name("index");
+// Route::get('/index', function () {
+//     return view('index');
+// })->middleware(['auth', 'verified'])->name('index');
 
-// --- INÍCIO DAS ROTAS PÚBLICAS (NÃO REQUEREM AUTENTICAÇÃO) ---
-
-// Rota para exibir os planos de assinatura (página pública, acessível a todos)
-Route::get("/assinaturas", [SubscriptionController::class, "index"])->name("assinaturas.index");
-
-// --- FIM DAS ROTAS PÚBLICAS ---
+Route::get("/subscription/index", [SubscriptionController::class, "index"])->name("subscription.index");
 
 
-// --- INÍCIO DO GRUPO DE ROTAS AUTENTICADAS (REQUEREM LOGIN) ---
-Route::middleware("auth")->group(function () {
-    // Rotas de Perfil
-    Route::get("/profile", [ProfileController::class, "edit"])->name("profile.edit");
-    Route::patch("/profile", [ProfileController::class, "update"])->name("profile.update");
-    Route::delete("/profile", [ProfileController::class, "destroy"])->name("profile.destroy");
 
-    // Rotas de Veículo
-    Route::get("/vehicle/create", [VehicleController::class, "create"])->name("vehicle.create");
-    Route::post("/vehicle/create", [VehicleController::class, "store"])->name("vehicle.store");
-    Route::get("/vehicle", [VehicleController::class, "index"])->name("vehicle.index");
-    Route::get("/vehicle/{vehicle}", [VehicleController::class, "edit"])->name("vehicle.edit");
-    Route::patch("/vehicle/{vehicle}", [VehicleController::class, "update"])->name("vehicle.update");
-    Route::delete("/vehicle/{vehicle}", [VehicleController::class, "destroy"])->name("vehicle.destroy");
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Rotas de Estabelecimento
-    Route::get("/establishment", [ProfileController::class, "index"])->name("establishment.index");
-    Route::get("/establishment/map", function () {
-        return view("establishment/map");
-    })->name("establishment.map");
+    Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicle.create');
+    Route::post('/vehicle/create', [VehicleController::class, 'store'])->name('vehicle.store');
+    Route::get('/vehicle', [VehicleController::class, 'index'])->name('vehicle.index');
+    Route::get('/vehicle/{vehicle}', [VehicleController::class, 'edit'])->name('vehicle.edit');
+    Route::patch('/vehicle/{vehicle}', [VehicleController::class, 'update'])->name('vehicle.update');
+    Route::delete('/vehicle/{vehicle}', [VehicleController::class, 'destroy'])->name('vehicle.destroy');
 
-    // Rotas de Membrosia/Pagamento (você já tinha estas e elas devem ser autenticadas)
-    Route::get("/membership", function () {
-        return view("membership/index");
-    })->name("membership");
-    Route::get("/payment", function () {
-        return view("payment/index");
-    })->name("payment");
-    
-    // Outras rotas gerais autenticadas
-    Route::get("/map", function () {
-        return view("map/index");
-    })->name("map");
-    Route::get("/support", function () {
-        return view("support/index");
-    })->name("support");
+    Route::get('/establishment', [EstablishmentController::class, 'index'])->name('establishment.index');
 
-    // Rota para o Dashboard (dentro do grupo autenticado), que redireciona conforme o tipo de usuário
-    Route::get("/dashboard", function () {
-        // Verifica se o usuário está autenticado
-        if (Auth::check()) {
-            // Se o usuário for do tipo "empresa", exibe o dashboard de empresa
-            if (Auth::user()->type === "empresa") { // Ajustado para "type" (minúsculo, padrão Laravel)
-                return view("business/dashboard");
-            }
-            // Caso contrário (seja cliente ou outro tipo), exibe o dashboard de cliente
-            return view("client/dashboard");
-        }
-        // Se o usuário não estiver autenticado (tentou acessar /dashboard diretamente),
-        // redireciona para a página de login.
-        return redirect()->route("login");
-    })->name("dashboard");
+    Route::get('/payment', function () {
+        return view('payment/index');
+    })->name('payment');
+    Route::get('/support', function () {
+        return view('support/index');
+    })->name('support');
 
-    //rota business
     Route::get('/dashboard', function () {
-    return view('business.dashboard');
+        if (Auth::user()->tipo === 'empresa') {
+            return view('business/dashboard');
+        }
+        $lastVisited = Establishment::first();
+
+        return view('client/dashboard', ['lastVisited' => $lastVisited]);
     })->name('dashboard');
-    
-    //rota detalhes
-    Route::get('/estacionamento/detalhes', function () {
-    return view('business.detalhes');
-    })->name('estacionamento.detalhes');
+});
 
+Route::prefix('maps')->name('maps.')->group(function () {
+    Route::get('/global', [MapController::class, 'globalMap'])->name('global');
+    Route::get('/establishment/{establishment}', [MapController::class, 'establishmentMap'])->name('establishment');
 
-}); // <--- ESTE É O FECHAMENTO DO BLOCO DE ROTAS QUE EXIGEM AUTENTICAÇÃO.
-    // Ele precisa estar no final de TODAS as rotas que dependem de "auth".
+    // Rotas de API para buscar dados via AJAX
+    Route::get('/api/establishments', [MapController::class, 'getEstablishments'])->name('api.establishments');
+    Route::get('/api/establishment/{establishment}/spots', [MapController::class, 'getSpots'])->name('api.spots');
 
+    // Rotas de API para adicionar/atualizar (para testar validação, se você criar formulários ou usar Postman)
+    Route::post('/api/establishments', [MapController::class, 'storeEstablishment'])->name('api.establishments.store');
+    Route::put('/api/establishments/{establishment}', [MapController::class, 'updateEstablishment'])->name('api.establishments.update');
+    Route::post('/api/spots', [MapController::class, 'storeSpot'])->name('api.spots.store');
+    Route::put('/api/spots/{spot}', [MapController::class, 'updateSpot'])->name('api.spots.update');
+});
 
-// Rotas de autenticação geradas pelo Breeze/Jetstream (login, registro, etc.)
-require __DIR__ . "/auth.php";
-
-
+require __DIR__ . '/auth.php';
