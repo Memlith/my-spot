@@ -100,6 +100,6 @@
                 .catch(error => console.error('Erro ao carregar vagas:', error));
         }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_DO_Maps&callback=initMap"></script>
+   <script async defer src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API_DO_Maps&callback=initMap"></script>
 </body>
 </html>
