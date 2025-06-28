@@ -3,6 +3,8 @@ width="400" alt="Laravel Logo"></a></p>
 
 ## O projeto
 
+MySpot é um sistema web para gerenciamento de estacionamentos em tempo real. O objetivo é facilitar o controle de vagas, permitindo que usuários visualizem a disponibilidade, reservem e gerenciem espaços de estacionamento de forma eficiente.
+
 ## Integrantes do grupo
 
 -   Airton Araujo Barreto Júnior
@@ -23,13 +25,14 @@ git clone https://github.com/Memlith/my-spot.git
 Instalando dependencias e criando arquivos necessarios para iniciar o projeto, colocando os commando no Terminal
 
 ```bash
-npm install # instala dependencias do node
+composer install # instala dependecias do php
+
+npm install # instala dependencias do node, talvez necessario apagar pasta node_modules
 
 npm audit fix # fix das dependencias linux que não vão para windows
 
-composer install # instala dependecias do php
-
-cp .env.example .env # copia arquivo .env.example e cria arquivo .env
+copy .env.example .env # WINDOWS: copia arquivo .env.example e cria arquivo .env
+cp .env.example .env # LINUX: copia arquivo .env.example e cria arquivo .env
 
 php artisan key:generate # gera chaves de criptografia
 
@@ -93,7 +96,7 @@ Então abrir no browser o link que o <i><b>php artisan serve</b></i> mostrou
 2. npm install (cria a /node_modules)
 
 Model - App/Models\ -> Classes
-Controller - App/Http/Controllers\ ->
+Controller - App/Http/Controllers\ -> Modelo de negocios
 View - resources/views\ -> Telas
 Migrations - database/migrations\ -> Banco de Dados
 Rotas/Endpoints - routes/web.php\ -> Link URL das Paginas
