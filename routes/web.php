@@ -22,7 +22,7 @@ Route::get("/", function () {
     return view("welcome");
 });
 
-// A rota 
+// A rota
 // Route::get("/index", function () {
 //     return view("index");
 // })->middleware(["auth", "verified"])->name("index");
@@ -63,7 +63,7 @@ Route::middleware("auth")->group(function () {
     Route::get("/payment", function () {
         return view("payment/index");
     })->name("payment");
-    
+
     // Outras rotas gerais autenticadas
     Route::get("/map", function () {
         return view("map/index");
@@ -89,14 +89,11 @@ Route::middleware("auth")->group(function () {
     })->name("dashboard");
 
     //rota business
-    Route::get('/dashboard', function () {
-    return view('business.dashboard');
-    })->name('dashboard');
-    
-    //rota detalhes
-    Route::get('/estacionamento/detalhes', function () {
-    return view('business.detalhes');
-    })->name('estacionamento.detalhes');
+    Route::get('/business/details', function () {
+        if (Auth::user()->tipo === 'empresa') {
+            return view('business/details');
+            }
+        })->name('business.details');
 
 
 }); // <--- ESTE É O FECHAMENTO DO BLOCO DE ROTAS QUE EXIGEM AUTENTICAÇÃO.
