@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\MapController;
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,18 +30,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/establishment', function () {
         return view('establishment/index');
     })->name('establishment');
-    Route::get('/establishment/map', function () {
-        return view('establishment/map');
-    })->name('establishment.map');
+
     Route::get('/membership', function () {
         return view('membership/index');
     })->name('membership');
     Route::get('/payment', function () {
         return view('payment/index');
     })->name('payment');
-    Route::get('/map', function () {
-        return view('map/index');
-    })->name('map');
     Route::get('/support', function () {
         return view('support/index');
     })->name('support');
@@ -52,9 +47,6 @@ Route::middleware('auth')->group(function () {
         }
         return view('client/dashboard');
     })->name('dashboard');
-});
-    Route::get('/', function () {
-    return redirect()->route('maps.global');
 });
 
 Route::prefix('maps')->name('maps.')->group(function () {
@@ -73,3 +65,5 @@ Route::prefix('maps')->name('maps.')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+

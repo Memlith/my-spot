@@ -12,38 +12,20 @@
                 </div>
                 <div class="p-6 pt-3 text-gray-900  dark:text-gray-100">
                     <div class="grid grid-cols-3 gap-4 mt-2">
-                        <a href="{{ route('establishment.map') }}">
-                            <div
-                                class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
-                                <div>
-                                    <h2 class="text-lg font-bold">Empresa XYZ</h2>
-                                    <p class="text-sm text-gray-600">Rua Avenida | Tel: (xx) xxxxx-xxxx</p>
-                                    <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
+                        @foreach ($users->where('tipo', 'empresa') as $user)
+                            <a href="{{ route('establishment.map') }}">
+                                <div
+                                    class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
+                                    <div>
+                                        <h2 class="text-lg font-bold">{{ $user->name }}</h2>
+                                        <p class="text-sm text-gray-600">{{ $user->adress . ' | ' . $user->contact }}
+                                        </p>
+                                        <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        @endforeach
 
-                        <a href="{{ route('establishment.map') }}">
-                            <div
-                                class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
-                                <div>
-                                    <h2 class="text-lg font-bold">Empresa XYZ</h2>
-                                    <p class="text-sm text-gray-600">Rua Avenida | Tel: (xx) xxxxx-xxxx</p>
-                                    <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="{{ route('establishment.map') }}">
-                            <div
-                                class="flex items-start border-2 border-gray-300 rounded-[10px] p-4 bg-gray-200 w-96  hover:bg-gray-300 transition">
-                                <div>
-                                    <h2 class="text-lg font-bold">Empresa XYZ</h2>
-                                    <p class="text-sm text-gray-600">Rua Avenida | Tel: (xx) xxxxx-xxxx</p>
-                                    <p class="text-sm text-gray-600">Aberto 08:00 - 18:00</p>
-                                </div>
-                            </div>
-                        </a>
 
                     </div>
                 </div>
